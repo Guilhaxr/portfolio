@@ -1,0 +1,37 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    background-color:  rgba( 60, 10, 85, 0.6);
+    font-size: 15px;
+    color: aliceblue;
+    height: 35px;
+    align-items: center;
+    height: 16px;
+    width: 100%;
+    position: fixed;
+}
+
+.headerStyle{
+    padding-right: 15px;
+    display: flex;
+}
+
+.appleIcon{
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.topMenuRight{
+    padding-right: 15px;
+    display:flex;
+}
+
+.date{
+    padding-left: 5px;
+}
+
+.hours{
+    padding-left: 10px;
+}

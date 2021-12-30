@@ -1,0 +1,22 @@
+body{
+  background-image: url(./components/css/bacKGround.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+      margin: 0;
+     
+      height: 100%;
+ 
+  
+}
+
+.windows{
+  height: 86vh;
+  margin:0;
+  padding:0;
+  max-width: 100vw;
+  top: 0;
+  left: 0;
+}
+

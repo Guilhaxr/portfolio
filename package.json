@@ -9,6 +9,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "cd client && yarn start",
+"backend": "cd server && nodemon server.js",
+"dev": "concurrently \"yarn run backend\" \"yarn run client\""
   }
 }

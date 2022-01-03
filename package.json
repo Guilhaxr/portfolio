@@ -5,13 +5,14 @@
     "express": "^4.17.2",
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.4",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && yarn start",
     "backend": "nodemon server.js",
-    "dev": "concurrently \"yarn run backend\" \"yarn run client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn run backend\" \"yarn run client\""
   }
 }

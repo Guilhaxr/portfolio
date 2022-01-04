@@ -1,7 +1,7 @@
 import "./css/Docks.css"
 
 
-const Dock = ({HandlerWindow, HandlerAbout}) =>{
+const Dock = ({HandlerContact, HandlerAbout, HandlerProjects}) =>{
 
     return (
         <footer className="dock-container">
@@ -13,13 +13,13 @@ const Dock = ({HandlerWindow, HandlerAbout}) =>{
                     </li>
                     <li>    
                         <span>Finder</span>
-                        <button onClick= {HandlerWindow}><img src="../images/finderMe.png" alt="maps" /></button>
+                        <button onClick= {HandlerContact}><img src="../images/finderMe.png" alt="maps" /></button>
                     </li>
                     <li>
                         
                         <span>Finder</span>
-                        <button onClick=" hello"><img src="../images/finderMe.png" alt="maps" /></button>
-                        {/* <img src="../images/finderMe.png" alt="maps" />  */}
+                        <button onClick={HandlerProjects}><img src="../images/finderMe.png" alt="maps" /></button>
+                        
                     </li>
                     <li>
                         <span>Finder</span>

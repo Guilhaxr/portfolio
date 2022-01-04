@@ -3,19 +3,27 @@ import { useDrag } from "react-use-gesture"
 import {useSpring, animated} from "react-spring"
 import About from "./About"
 import Contact from "./Contact"
+import Projects from "./Projects"
 import  "./css/UserScreen.css"
 
-const UserScreen = ({HandlerAbout, HandlerWindow, openAbout, openWindow }) => {
+const UserScreen = ({HandlerAbout, HandlerContact, HandlerProjects, openAbout, openContact, openProjects  }) => {
    
   const [ counterAbout, setCounterAbout] = useState(0);
-  const [ counter2, setCounter2] = useState(0);
+  const [ counterContact, setCounterContact] = useState(0);
+  const [ counterProjects, setCounterProjects] = useState(0);
+  
 
   const [aboutPos, setAboutPos] = useState({x: 0, y: 0});
-  const [ProjectPos, setProjectPos] = useState({x: 0, y: 0});
+  const [contactPos, setContactPos] = useState({x: 0, y: 0});
+  const [projectPos, setProjectPos] = useState({x: 0, y: 0});
   
 
   const bindAboutPos = useDrag(({ offset: [ox, oy] }) => setAboutPos({ x: ox, y: oy}), {
       bounds: {top: 16 ,  left:-Infinity, right:Infinity
+      } })
+
+  const bindContactPos = useDrag(({  offset: [ox, oy]}) => setContactPos({ x: ox, y: oy }), {
+      bounds: {top: 16 ,  left:-100, right:Infinity
       } })
 
   const bindProjectPos = useDrag(({  offset: [ox, oy]}) => setProjectPos({ x: ox, y: oy }), {
@@ -23,11 +31,15 @@ const UserScreen = ({HandlerAbout, HandlerWindow, openAbout, openWindow }) => {
       } })
 
       let incrementAbout = () => {
-        setCounterAbout((counterAbout + counter2)  + 2 )
+        setCounterAbout((counterAbout + counterContact + counterProjects)  + 2 )
       }
 
-      let incrementWindow = () => {
-        setCounter2((counterAbout + counter2)  + 2 )
+      let incrementContact = () => {
+        setCounterContact((counterAbout + counterContact + counterProjects)  + 2 )
+      }
+
+      let incrementProject = () => {
+        setCounterProjects((counterAbout + counterContact + counterProjects)  + 2 )
       }
 
     return(
@@ -44,15 +56,27 @@ const UserScreen = ({HandlerAbout, HandlerWindow, openAbout, openWindow }) => {
             </div>
 
 
-            <div onClick={incrementWindow}  {...bindProjectPos()} style={{
+            <div onClick={incrementContact}  {...bindContactPos()} style={{
               width: "fit-content",
               position:"absolute",
-              top: ProjectPos.y,
-              left: ProjectPos.x,
-              zIndex: counter2
+              top: contactPos.y,
+              left: contactPos.x,
+              zIndex: counterContact
             }}
             >
-              {openWindow && <Contact HandlerButton={HandlerWindow}  />}
+              {openContact && <Contact HandlerButton={HandlerContact}  />}
+            </div>
+
+
+              <div onClick={incrementProject}  {...bindProjectPos()} style={{
+              width: "fit-content",
+              position:"absolute",
+              top: projectPos.y,
+              left: projectPos.x,
+              zIndex: counterProjects
+            }}
+            >
+              {openProjects && <Projects HandlerButton={HandlerProjects}  />}  
             </div>
         </section>
     )
@@ -60,6 +84,3 @@ const UserScreen = ({HandlerAbout, HandlerWindow, openAbout, openWindow }) => {
 
 export default UserScreen;
 
-// const bindAboutPos = useDrag(({ down, offset: [x, y] }) => aboutPos({ x: x, y: y, immediate: down }), {
-//   bounds: {top: 16 ,  left:-Infinity, right:Infinity
-//   } })

@@ -1,17 +1,15 @@
 import "./App.css"
 import { useState } from "react"
-// import { useDrag } from "react-use-gesture"
 import Header from "./components/Header"
 import Dock from "./components/Dock"
-// import About from "./components/About"
-// import Contact from "./components/Contact"
 import UserScreen from "./components/UserScreen"
 
 
 
 function App() {
   const [openAbout, setOpenAbout] = useState(false)
-  const [openWindow, setOpenWindow] = useState(false)
+  const [openContact, setOpenContact] = useState(false)
+  const [openProjects, setOpenProjects] = useState(false)
 
 
 
@@ -20,8 +18,12 @@ function App() {
       
   }
 
-  const HandlerWindow = () => {
-    setOpenWindow(!openWindow)
+  const HandlerContact = () => {
+    setOpenContact(!openContact)
+  }
+
+  const HandlerProjects = () => {
+    setOpenProjects(!openProjects)
   }
 
 
@@ -32,13 +34,17 @@ function App() {
     <div className="backGround">
       <Header />
       <UserScreen 
-        HandlerWindow={HandlerWindow}
+        HandlerContact={HandlerContact}
         HandlerAbout={HandlerAbout}
+        HandlerProjects={HandlerProjects}
+        
+        openContact={openContact}
         openAbout={openAbout}
-        openWindow={openWindow}
+        openProjects={openProjects}
+        
       />
 
-      <Dock HandlerWindow={HandlerWindow} HandlerAbout={HandlerAbout}/>
+      <Dock HandlerContact={HandlerContact} HandlerAbout={HandlerAbout} HandlerProjects={HandlerProjects}/>
       
     </div>
   );

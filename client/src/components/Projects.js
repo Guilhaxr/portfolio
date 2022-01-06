@@ -2,21 +2,23 @@ import axios from "axios";
 import "./css/Window.css"
 import React, { useState, useEffect } from "react";
 import ProjectBox from "./ProjectBox";
+import Carousel from 'react-bootstrap/Carousel'
 
 const Projects = ({HandlerButton}) => {
 
-    // const [data, setData] = useState();
+    const [data, setData] = useState();
+     const [zoom, setZoom] = useState(false)
 
-    // useEffect(()=>{
+    useEffect(()=>{
 
-    //     axios
-    //         .get(`/api/projects`)
-    //         .then((res)=> setData(res.data))
-    //         .catch((err)=>{ console.log(err)})
-    // }, []);
+        axios
+            .get(`/api/projects`)
+            .then((res)=> setData(res.data))
+            .catch((err)=>{ console.log(err)})
+    }, []);
     
 
-    const [zoom, setZoom] = useState(false)
+
 
 
 
@@ -55,16 +57,22 @@ const Projects = ({HandlerButton}) => {
             </div>
         </div>
         <div className="windowInformation">
-            {/* {data && data.map((item, i)=>
+        <Carousel>
+
+            {data && data.map((item, i)=>
+            <Carousel.Item interval={3000}>
                     <ProjectBox 
                         name={item.name}
                         key={i}
                         date={item.date}
                         description={item.description}
                         techs={item.description}
-                        // url={item.url}
+                        url={item.url}
                     />
-                )} */}
+                    </Carousel.Item>
+                )}
+                </Carousel>
+
         </div>
     </div>
 

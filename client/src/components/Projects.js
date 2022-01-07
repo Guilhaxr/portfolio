@@ -2,24 +2,24 @@ import axios from "axios";
 import "./css/Window.css"
 import React, { useState, useEffect } from "react";
 import ProjectBox from "./ProjectBox";
-import Carousel from 'react-bootstrap/Carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+
 
 const Projects = ({HandlerButton}) => {
 
     const [data, setData] = useState();
-     const [zoom, setZoom] = useState(false)
+    const [zoom, setZoom] = useState(false);
+
+
 
     useEffect(()=>{
-
         axios
             .get(`/api/projects`)
             .then((res)=> setData(res.data))
             .catch((err)=>{ console.log(err)})
     }, []);
-    
-
-
-
 
 
     const smallZoom = {
@@ -39,8 +39,11 @@ const Projects = ({HandlerButton}) => {
     }
 
 
-    return(
+    // const handleSelect = (selectedIndex, e) =>{
+    //     setIndex(selectedIndex)
+    // }
 
+    return(
 
 <div className="window-container" style={zoom ? maxZoom : smallZoom} >
         <div className="titleBar">
@@ -57,21 +60,23 @@ const Projects = ({HandlerButton}) => {
             </div>
         </div>
         <div className="windowInformation">
-        <Carousel>
 
+        <Carousel>
             {data && data.map((item, i)=>
-            <Carousel.Item interval={3000}>
-                    <ProjectBox 
-                        name={item.name}
-                        key={i}
-                        date={item.date}
-                        description={item.description}
-                        techs={item.description}
-                        url={item.url}
-                    />
-                    </Carousel.Item>
-                )}
-                </Carousel>
+      
+                            <ProjectBox 
+                                image={item.image}
+                                name={item.name}
+                                key={i}
+                                date={item.date}
+                                description={item.description}
+                                techs={item.techs}
+                                url={item.url}
+                                
+                            />
+            )}
+         </Carousel>
+         
 
         </div>
     </div>

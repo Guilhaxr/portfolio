@@ -1,23 +1,23 @@
 import "./css/Window.css"
 
-const ProjectBox = ({name, key, date, description, url, techs}) => {
-   
+
+const ProjectBox = ({name, key, date, description, url, techs, image}) => {
 
 
    return(
 
-    <div className="windowInformation"  key={key}>
-               <p>{name}</p>
-                <p>{date}</p>
-                <p>{description}</p>
-                <p>{techs}</p>
-                <p>{url}</p>
+    <div   key={key}>
+
+        {/* <div style={{backgroundImage: `url(${image})` }} >
+        </div> */}
+            <img src={image}/>
+               <h1>{name}</h1>
+               <p>{date}</p>
+               <p>{description}</p>
+               <p>{techs}</p>
+               <p>{url}</p>
+                
     </div>
-
-
-
-       
- 
    )
 }
 

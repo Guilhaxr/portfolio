@@ -60,7 +60,6 @@ const Projects = ({HandlerButton}) => {
             </div>
         </div>
         <div className="windowInformation">
-
         <Carousel>
             {data && data.map((item, i)=>
       
@@ -76,8 +75,6 @@ const Projects = ({HandlerButton}) => {
                             />
             )}
          </Carousel>
-         
-
         </div>
     </div>
 

@@ -22,9 +22,9 @@ const Projects = ({HandlerButton}) => {
     }, []);
 
 
-    const smallZoom = {
-        height: "50vh",
-    }
+    // const smallZoom = {
+    //     // height: "83vh",
+    // }
 
     const maxZoom = {
         height: "86vh",
@@ -45,7 +45,7 @@ const Projects = ({HandlerButton}) => {
 
     return(
 
-<div className="window-container" style={zoom ? maxZoom : smallZoom} >
+<div className="window-container" style={zoom ? maxZoom : null} >
         <div className="titleBar">
             <div className="buttons">
                 <div className="close">

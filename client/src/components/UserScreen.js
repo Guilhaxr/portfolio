@@ -46,7 +46,7 @@ const UserScreen = ({HandlerAbout, HandlerContact, HandlerProjects, openAbout, o
         <section className="ScreenLimit">
 
             <div  onClick={incrementAbout}  {...bindAboutPos()}  style={{
-              width: "fit-content",
+              // width: "fit-content",
               position:"absolute",
               top: aboutPos.y,
               left: aboutPos.x,
@@ -57,7 +57,7 @@ const UserScreen = ({HandlerAbout, HandlerContact, HandlerProjects, openAbout, o
 
 
             <div onClick={incrementContact}  {...bindContactPos()} style={{
-              width: "fit-content",
+              // width: "fit-content",
               position:"absolute",
               top: contactPos.y,
               left: contactPos.x,
@@ -69,7 +69,9 @@ const UserScreen = ({HandlerAbout, HandlerContact, HandlerProjects, openAbout, o
 
 
               <div onClick={incrementProject}  {...bindProjectPos()} style={{
-              width: "fit-content",
+              // width: "fit-content",
+              // width: "1000px",
+              // height: "1000px",
               position:"absolute",
               top: projectPos.y,
               left: projectPos.x,

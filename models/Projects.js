@@ -6,7 +6,8 @@ const ProjectsSchema = new Schema({
     date : {type: String},
     description : {type: String},
     techs : {type: String},
-    url : {type: String}
+    url : {type: String},
+    techsLogos : {type : Array}
 });
 
 

@@ -22,6 +22,9 @@ const Projects = ({HandlerButton}) => {
     }, []);
 
 
+    // Object.values(data.techsLogos.JavaScript).map((values) =>(console.log(values)))
+
+
     // const smallZoom = {
     //     // height: "83vh",
     // }
@@ -43,6 +46,8 @@ const Projects = ({HandlerButton}) => {
     //     setIndex(selectedIndex)
     // }
 
+
+
     return(
 
 <div className="window-container" style={zoom ? maxZoom : null} >
@@ -60,17 +65,21 @@ const Projects = ({HandlerButton}) => {
             </div>
         </div>
         <div className="windowInformation">
+
+           
         <Carousel>
+        
             {data && data.map((item, i)=>
       
                             <ProjectBox 
                                 image={item.image}
-                                name={item.name}
+                                techsLogos={item.techsLogos}
+                                
                                 key={i}
                                 date={item.date}
                                 description={item.description}
                                 techs={item.techs}
-                                url={item.url}
+                              
                                 
                             />
             )}

@@ -76,7 +76,7 @@ const Projects = ({HandlerButton}) => {
                                 date={item.date}
                                 description={item.description}
                                 techs={item.techs}
-                            
+                                url={item.url}
                             />
             )}
          </Carousel>

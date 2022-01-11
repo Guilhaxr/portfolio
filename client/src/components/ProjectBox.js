@@ -1,5 +1,6 @@
 import "./css/Window.css"
 import "./css/ProjectBox.css"
+import {BrowserRouter as Router,Link} from "react-router-dom"
 
 
 const ProjectBox = ({ techsLogos, key, date, description, url, techs, image}) => {
@@ -24,9 +25,10 @@ const ProjectBox = ({ techsLogos, key, date, description, url, techs, image}) =>
                <div className="AllTechsLogo">
                   {techsLogos.map((item)=> <div className ="techsLogo"> <img  src={item}  alt="techs"/> </div>)}
                </div>
-               <button className="VisitButton">Visit</button>
+                  <button className="VisitButton" onClick={()=> window.open(url, "_blank")}> <span>CHECK IT</span></button> 
             </div>
     </div>
+  
    )
 }
 

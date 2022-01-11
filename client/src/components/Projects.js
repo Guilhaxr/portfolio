@@ -22,9 +22,6 @@ const Projects = ({HandlerButton}) => {
     }, []);
 
 
-    // Object.values(data.techsLogos.JavaScript).map((values) =>(console.log(values)))
-
-
     // const smallZoom = {
     //     // height: "83vh",
     // }
@@ -79,8 +76,7 @@ const Projects = ({HandlerButton}) => {
                                 date={item.date}
                                 description={item.description}
                                 techs={item.techs}
-                              
-                                
+                            
                             />
             )}
          </Carousel>

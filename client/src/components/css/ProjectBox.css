@@ -1,43 +1,79 @@
 
-.logoProject{
+.cardProject{
+    background:linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,0,200,0.758140756302521) 0%, rgba(100,14,167,1) 69%);
+    border-radius: 0px 0px 40% 40%;
     display: block;
+    height: 25vh;
+    margin-bottom: 15px;
+}
+
+
+
+
+.logoProject{
+  
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    padding-top: 10px;
+    max-width: 20vw;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    
 }
 
-.line{
-    border-top: 1px solid;
-    width: 250px;
+
+
+
+.dateAndLine {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .dateAndLine:before, .dateAndLine:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
     margin: auto;
-    display: block;
-    padding-top: 20px;
-}
-.all-sides{
+  }
+  .dateAndLine:before {
+    margin-right: 5px
+  }
+  .dateAndLine:after {
+    margin-left: 5px
+  }
+
+
+.contentProject{
     display: flex;
     flex-direction: column;
+    /* color: ; */
 }
 
-.left-side{
-        /* width: 50vw; */
-    text-align: center;
-    padding-top: 30px;
-    padding-right: 20px;
+
+.descriptionProject{
+    font-size: 15px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
-.right-side{
+.AllTechsLogo{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-}
 
-.right-side button{
-    width: 80px;
+    margin: auto;
+    padding-bottom: 80px;
+    padding-left: 0px;
+
 }
 
 .techsLogo{
-    
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 4vw;
+}
 
+.VisitButton{
+    margin: auto;
+  
+    width: 50px;
 }

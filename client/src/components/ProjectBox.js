@@ -4,32 +4,27 @@ import "./css/ProjectBox.css"
 
 const ProjectBox = ({ techsLogos, key, date, description, url, techs, image}) => {
 
-   console.log(techsLogos)
+  
 
    return(
 
       
 
     <div   key={key}  >
-            <div className="logoProject">
-               <img src={image}/>
+       <div className="cardProject">
+       <div className="logoProject">
+               <img src={image} alt="logo" />
             </div>
-            <div className="all-sides">
-               <div className="left-side">
-                  <p>{description}</p>
-               </div>
+       </div>
+            
+            <div className="contentProject">
+               <p className="descriptionProject">{description}</p>
+               <p className="dateAndLine">Duration: {date}</p>
                <div className="line"></div>
-               <div className="right-side">
-                  <p>Duration: {date}</p>
-                  <p>Techs: {techs}</p>
-                  <div className="techsLogo">
-                   {techsLogos.map((item)=> <img src={item} />)}
-                  </div>
-                  
-                  <button>Visit</button>
+               <div className="AllTechsLogo">
+                  {techsLogos.map((item)=> <div className ="techsLogo"> <img  src={item}  alt="techs"/> </div>)}
                </div>
-               
-               {/* <p>{url}</p> */}
+               <button className="VisitButton">Visit</button>
             </div>
     </div>
    )

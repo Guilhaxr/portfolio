@@ -21,8 +21,8 @@ const ProjectBox = ({ techsLogos, key, date, description, url, techs, image}) =>
             
             <div className="contentProject">
                <p className="descriptionProject">{description}</p>
-               <p className="dateAndLine">Duration: {date}</p>
-               <div className="line"></div>
+               <p className="dateAndLine"><span>Duration: {date}</span></p>
+               {/* <div className="line"></div> */}
                   <div className="AllTechsLogo">
                      {techsLogos.map((item)=> <div className ="techsLogo"> <img  src={item}  alt="techs"/> </div>)}
                   </div>

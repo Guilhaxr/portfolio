@@ -1,0 +1,13 @@
+.arrow-carousel{
+    outline: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    position: absolute;
+    z-Index: 2;
+    top: calc(96% - 15px);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+

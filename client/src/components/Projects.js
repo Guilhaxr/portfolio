@@ -1,9 +1,13 @@
 import axios from "axios";
 import "./css/Window.css"
+import "./css/carousel.css"
 import React, { useState, useEffect } from "react";
 import ProjectBox from "./ProjectBox";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel} from 'react-responsive-carousel';
+import{FaArrowRight, FaArrowLeft} from "react-icons/fa";
+
+
 
 
 
@@ -64,7 +68,21 @@ const Projects = ({HandlerButton}) => {
         <div className="windowInformation">
 
            
-        <Carousel>
+        <Carousel showStatus={false}  showIndicators={false} renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                hasPrev && (
+                    <button className="arrow-carousel" type="button" onClick={onClickHandler} title={label} style={{left:"15px"}}>
+                    <FaArrowLeft />
+                    </button>
+                )
+            }
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+                hasNext && (
+                    <button  className="arrow-carousel" type="button" onClick={onClickHandler} title={label} style={{right:"15px"}} >
+                        <FaArrowRight />
+                    </button>
+                )
+            } 
+            >
         
             {data && data.map((item, i)=>
       

@@ -10,7 +10,7 @@
    font-family: Helvetica, sans-serif;
     width: 70vw;
     margin:0;
-    /* height: 70vh; */
+   
     
 }
 
@@ -18,10 +18,9 @@
 
 .windowInformation{ 
     background-color: white;
-    height: 83.9vh;
+    height: 83vh;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    /* font-size: 15px; */
     color: black;
 } 
 

@@ -31,7 +31,6 @@ const Projects = ({HandlerButton}) => {
     // }
 
     const maxZoom = {
-        height: "86vh",
         width: "100vw",
         position: "absolute",
         top: "0px",

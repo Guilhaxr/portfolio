@@ -1,5 +1,7 @@
 import "./css/Window.css"
+import "./css/AboutMe.css"
 import { useState } from "react"
+
 
 
 const About = ({HandlerButton}) => {
@@ -12,7 +14,6 @@ const About = ({HandlerButton}) => {
     // }
 
     const maxZoom = {
-        height: "86vh",
         width: "100vw",
         position: "absolute",
         top: "0px",
@@ -21,6 +22,13 @@ const About = ({HandlerButton}) => {
 
     const handlerZoom = () =>{
         setZoom(!zoom);
+    }
+
+    const windowAboutStyle = {
+        display: "flex",
+        // justifyContent: "center"
+        // width:"100%",
+     
     }
 
     return(
@@ -39,9 +47,23 @@ const About = ({HandlerButton}) => {
                 </div>
             </div>
         </div>
-        <div className="windowInformation">
-            {/* <p>hellooo My name is G </p>
-            <p>My projects</p> */}
+        <div className="windowInformation" style={windowAboutStyle}>
+            <div className="personalInformation">
+                foto
+            </div>
+            <div className="splitLeftSide">
+                <div className="aboutMe">
+                    aboute
+                </div>
+                <div className="skills">
+                    skills
+                </div>
+                
+            </div>
+           
+
+
+            
         </div>
     </div>
     )

@@ -7,12 +7,11 @@ const Contact = ({HandlerButton}) => {
 
 
 
-    const smallZoom = {
-        height: "50vh",
-    }
+    // const smallZoom = {
+    //     height: "50vh",
+    // }
 
     const maxZoom = {
-        height: "86vh",
         width: "100vw",
         position: "absolute",
         top: "0px",
@@ -25,7 +24,7 @@ const Contact = ({HandlerButton}) => {
 
     return(
         
-    <div  className="window-container" style={zoom ? maxZoom : smallZoom} >
+    <div  className="window-container" style={zoom ? maxZoom : null} >
         <div className="titleBar">
             <div className="buttons">
                 <div className="close">

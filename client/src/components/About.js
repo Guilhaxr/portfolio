@@ -7,9 +7,9 @@ const About = ({HandlerButton}) => {
 
 
 
-    const smallZoom = {
-        height: "50vh",
-    }
+    // const smallZoom = {
+    //     height: "50vh",
+    // }
 
     const maxZoom = {
         height: "86vh",
@@ -25,7 +25,7 @@ const About = ({HandlerButton}) => {
 
     return(
         
-    <div className="window-container" style={zoom ? maxZoom : smallZoom} >
+    <div className="window-container" style={zoom ? maxZoom : null} >
         <div className="titleBar">
             <div className="buttons">
                 <div className="close">
@@ -40,8 +40,8 @@ const About = ({HandlerButton}) => {
             </div>
         </div>
         <div className="windowInformation">
-            <p>hellooo My name is G </p>
-            <p>My projects</p>
+            {/* <p>hellooo My name is G </p>
+            <p>My projects</p> */}
         </div>
     </div>
     )

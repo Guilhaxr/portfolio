@@ -43,11 +43,6 @@ const Projects = ({HandlerButton}) => {
     }
 
 
-    // const handleSelect = (selectedIndex, e) =>{
-    //     setIndex(selectedIndex)
-    // }
-
-
 
     return(
 
@@ -68,7 +63,7 @@ const Projects = ({HandlerButton}) => {
         <div className="windowInformation">
 
            
-        <Carousel showStatus={false}  showIndicators={false} renderArrowPrev={(onClickHandler, hasPrev, label) =>
+        <Carousel showThumbs={false} showStatus={false}  showIndicators={false} renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
                     <button className="arrow-carousel" type="button" onClick={onClickHandler} title={label} style={{left:"15px"}}>
                     <FaArrowLeft />

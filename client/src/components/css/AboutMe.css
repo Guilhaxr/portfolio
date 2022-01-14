@@ -28,7 +28,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
 }
 
@@ -39,12 +38,16 @@
     word-spacing: 3px;
     letter-spacing: 0.5px;
     line-height: 1.3;
+    font-size: 15px;
+   
 }
 
-.skills{
-    
+.techSkills{
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y:scroll;
     height: 100%;
     border-top: 1px solid;
+    padding: 0 20px;
 }
 
 .splitLeftSide{
@@ -54,4 +57,50 @@
     flex-direction: column;
     justify-content: center;
    
+}
+
+.skillBox{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 20px 0;
+  
+
+}
+
+.skillBox p{
+    margin: 0 0 10px;
+    padding: 0 0 0 20px;
+  
+}
+
+.skillBox p:nth-child(2){
+    float: right;
+    position: relative;
+    padding: 0 20px 0 0;
+    top: -25px;
+}
+
+.skill{
+    background: #262626;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 1px solid #0fffb7;
+    border-radius: 2px ;
+}
+
+.skill-level{
+    background: #0fffb7;
+    width: 100%;
+    height: 10px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }

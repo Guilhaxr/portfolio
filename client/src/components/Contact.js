@@ -1,11 +1,22 @@
 import "./css/Window.css"
 import { useState } from "react"
+import "./css/contact.css"
 
 
 const Contact = ({HandlerButton}) => {
-    const [zoom, setZoom] = useState(false)
+    const [zoom, setZoom] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
+    console.log(name)
+    console.log(email)
+    console.log(message)
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+      }
+      
 
     // const smallZoom = {
     //     height: "50vh",
@@ -20,6 +31,12 @@ const Contact = ({HandlerButton}) => {
 
     const handlerZoom = () =>{
         setZoom(!zoom);
+    }
+
+    const windowContactStyle = {
+        display: "flex",
+        justifyContent: "center",
+     
     }
 
     return(
@@ -38,8 +55,48 @@ const Contact = ({HandlerButton}) => {
                 </div>
             </div>
         </div>
-        <div className="windowInformation">
-            <p>WOOOOOOOOOW </p>
+        <div className="windowInformation" style={windowContactStyle}>
+           <div className="contactMe">
+               Contact Me
+           </div>
+         <div className="contactform">
+             <form  onSubmit={handleSubmit} className="form">
+                 <label for="name">Your Name</label>
+                 <input type="text"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="name"     
+                        tabIndex="1"   
+                        required
+                />
+        
+                <label for="email">Email</label>
+                <input 
+                    type="text"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="email"
+                    tabIndex="2"
+                    placeholder="Email"
+                    required
+                />
+                <label for="message">Message</label>
+                <textarea 
+                    type="text"
+                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="message"
+                    tabIndex="3"
+                    required
+                />
+                <button  type="submit" className="submitButton">Submit</button>
+             </form>
+
+         </div>
+
         </div>
     </div>
     )

@@ -1,0 +1,15 @@
+.contactMe{
+  
+    width: 50%;
+    height: 100%;
+}
+
+.contactform{
+    width: 50%;
+    height: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}

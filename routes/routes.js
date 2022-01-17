@@ -9,7 +9,7 @@ const contactRouter = require("./contact.routes")
 const Routes = (app) =>{
 
     app.use('/api/projects', projectsRouter);
-    // app.use('/contact', contactRouter )
+    app.use('/contact', contactRouter )
  
    
 

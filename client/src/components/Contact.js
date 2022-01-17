@@ -6,11 +6,11 @@ import axios from "axios";
 
 const Contact = ({HandlerButton}) => {
     const [zoom, setZoom] = useState(false);
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [message, setMessage] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-  
+
 
 
 
@@ -18,22 +18,17 @@ const Contact = ({HandlerButton}) => {
 
         e.preventDefault();
 
-        const config = {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          };
+        // const config = {
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //   };
  
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
+
    
-  axios.post(`/contact`, details, config)
+  axios.post(`/contact`, {name, email, message})
    .then((res)=>{
-    console.log(res)
+    console.log("message sent inputs")
    })
    .catch((err)=>{
     console.log(err)
@@ -85,37 +80,37 @@ const Contact = ({HandlerButton}) => {
            </div>
          <div className="contactform">
              <form  onSubmit={handleSubmit} className="form">
-                 <label for="name">Your Name</label>
+                 <label >Your Name</label>
                  <input type="text"
                         name="name"
-                        // value={name}
-                        // onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         className="name" 
-                        id="name"    
+                       
                         tabIndex="1"   
                         required
                 />
         
-                <label for="email">Email</label>
+                <label >Email</label>
                 <input 
                     type="text"
                     name="email"
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="email"
                     tabIndex="2"
                     placeholder="Email"
-                    id="email"
+                
                     required
                 />
-                <label for="message">Message</label>
+                <label>Message</label>
                 <textarea 
                     type="text"
                     name="message"
-                    // value={message}
-                    // onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="message"
-                    id="message"
+                
                     tabIndex="3"
                     required
                 />

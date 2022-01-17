@@ -2,21 +2,25 @@ require('dotenv').config();
 const path = require('path');
 const Routes = require('./routes/routes');
 const express = require('express');
+const cors = require("cors");
+const nodemailer = require("nodemailer");
 const mongoose = require('mongoose');
+const sgmail = require('@sendgrid/mail')
 const app = express();
-
-
 
 
 app.use(express.json());
 
+app.use(cors());
+
 Routes(app);
 
+const api_key = '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';
+sgmail.setApiKey(api_key)
 
 // app.use("/api/projects", require("./routes/projects.routes"));
 
 app.use(express.urlencoded({ extended: false }));
-
 
 
 

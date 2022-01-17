@@ -15,7 +15,7 @@ app.use(cors());
 
 Routes(app);
 
-const api_key = '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';
+const api_key = `${process.env.DB_API_KEY}`;
 sgmail.setApiKey(api_key)
 
 // app.use("/api/projects", require("./routes/projects.routes"));
